@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const dbConnect = require('./dbConnect');
 
 const app = express();
@@ -10,6 +11,7 @@ const transactionRoute = require('./routes/transactionRoute');
 
 // enables destructuring object from client
 app.use(express.json());
+app.use(cors());
 
 // register routes
 app.use('/api/users/', userRoute);
